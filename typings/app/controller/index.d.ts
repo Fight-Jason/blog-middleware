@@ -6,10 +6,10 @@ import ExportHome from '../../../app/controller/home';
 import ExportDefaultHome from '../../../app/controller/default/home';
 
 declare module 'egg' {
-	interface IController {
-		home: ExportHome;
-		default: {
-			home: ExportDefaultHome;
-		}
-	}
+  interface IController {
+    home: ExportHome;
+    default: {
+      home: ExportDefaultHome;
+    }
+  }
 }

@@ -18,20 +18,20 @@ import 'egg-mysql';
 import 'egg-cors';
 import { EggPluginItem } from 'egg';
 declare module 'egg' {
-	interface EggPlugin {
-		onerror?: EggPluginItem;
-		session?: EggPluginItem;
-		i18n?: EggPluginItem;
-		watcher?: EggPluginItem;
-		multipart?: EggPluginItem;
-		security?: EggPluginItem;
-		development?: EggPluginItem;
-		logrotator?: EggPluginItem;
-		schedule?: EggPluginItem;
-		static?: EggPluginItem;
-		jsonp?: EggPluginItem;
-		view?: EggPluginItem;
-		mysql?: EggPluginItem;
-		cors?: EggPluginItem;
-	}
+  interface EggPlugin {
+    onerror?: EggPluginItem;
+    session?: EggPluginItem;
+    i18n?: EggPluginItem;
+    watcher?: EggPluginItem;
+    multipart?: EggPluginItem;
+    security?: EggPluginItem;
+    development?: EggPluginItem;
+    logrotator?: EggPluginItem;
+    schedule?: EggPluginItem;
+    static?: EggPluginItem;
+    jsonp?: EggPluginItem;
+    view?: EggPluginItem;
+    mysql?: EggPluginItem;
+    cors?: EggPluginItem;
+  }
 }
