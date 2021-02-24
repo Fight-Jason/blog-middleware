@@ -1,9 +1,9 @@
 export default () => {
-    return async function adminauth (ctx,next){
+    return async function adminauth (ctx, next){
         if(ctx.session.openId){
             await next()
         }else{
-            ctx.body={data:'没有登录'}
+            ctx.body={data:'用户未登录'}
         }
     }
 }
