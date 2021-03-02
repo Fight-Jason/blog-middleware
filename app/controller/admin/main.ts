@@ -72,4 +72,22 @@ export default class MainController extends Controller {
         this.ctx.body = {data: res}
     }
     
+    //根据文章ID得到文章详情，用于修改文章
+    public async getArticleById() {
+        let id = this.ctx.params.id;
+        let SQL = `SELECT
+            article.id as id,
+            article.title as title,
+            article.introduce as introduce,
+            article.article_content as article_content,
+            article.view_count as view_count,
+            FROM_UNIXTIME(article.addTime,'%Y-%m-%d' ) as addTime,
+            type.typeName as typeName,
+            type.id as typeId
+            FROM article LEFT JOIN type ON article.type_id = type.Id
+            WHERE article.id = ${id}
+        `
+        const res = await this.app.mysql.query(SQL)
+        this.ctx.body = {data: res}
+    }
 }
