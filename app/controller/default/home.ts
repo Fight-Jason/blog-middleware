@@ -12,6 +12,7 @@ export default class HomeController extends Controller {
 			article.view_count as view_count,
 			.type.typeName as typeName
 			FROM article LEFT JOIN type ON article.type_id = type.Id
+			ORDER BY article.id DESC
 		`
 		const results = await this.app.mysql.query(SQL)
 		ctx.body = { data: results }
@@ -61,7 +62,6 @@ export default class HomeController extends Controller {
 		const results = await this.app.mysql.query(SQL)
 		ctx.body = { data: results }
 	}
-
 
 
 }
